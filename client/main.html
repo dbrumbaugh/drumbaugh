@@ -1,0 +1,31 @@
+<!-- automagically compiled head stuff -->
+<head>
+  <title>Douglas Rumbaugh</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<template name="layout">
+
+  <!-- container -->
+  <div class="w3-content w3-margin-top w3-light-grey" style="max-width:1400px;">
+
+    <!-- grid -->
+    <div class="w3-row-padding">
+    
+      {{> leftColumn }}
+      
+      <!-- right column -->
+      <div class="w3-twothird">
+
+        {{> Template.dynamic template=content }} <!-- router renders content into here -->
+
+      </div>
+    </div>
+  </div>
+
+  {{> footer }}
+
+</template>

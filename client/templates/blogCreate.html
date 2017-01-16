@@ -1,0 +1,28 @@
+<template name="blogCreate">
+
+<div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+	<div class="w3-container">
+
+		<h4 class="w3-text-grey w3-margin-top">
+			Create a new post
+	    </h4>
+
+		<div class="w3-text-grey w3-padding-16">
+			<input id="title" placeholder="Post title..." value={{preview.title}} />
+		</div>
+
+	    <textarea id="body" placeholder="Post body..." value={{preview.body}}></textarea>
+
+	    <div class="w3-right w3-margin-bottom w3-margin-top">
+			<button id="submit" class="w3-btn" {{disableSubmit}}>Submit</button>
+			<button id="save" class="w3-btn w3-teal" {{disableSubmit}}>Save Draft</button>
+			<button id="cancel" class="w3-btn">Cancel</button>
+		</div>
+
+	</div>
+</div>
+
+<!-- preview -->
+{{> blogPost }}
+
+</template>

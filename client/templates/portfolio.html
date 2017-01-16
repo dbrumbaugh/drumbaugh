@@ -1,0 +1,45 @@
+<template name="portfolio">
+
+    <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+
+        <h2 class="w3-text-grey w3-padding-16">
+          <i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>
+          Work Experience
+        </h2>
+        
+        {{#each jobs}}
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>{{position}}</b></h5>
+            <h5 class="w3-opacity"><b>{{workplace}}</b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{started}} - {{finished}}</h6>
+            <p>{{description}}</p>
+            <hr>
+          </div>
+        {{/each}}
+        
+      </div>
+
+      <div class="w3-container w3-card-2 w3-white">
+        
+        <h2 class="w3-text-grey w3-padding-16">
+          <i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>
+          Education
+        </h2>
+        
+        {{#each education}}
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>{{university}}</b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{started}} - {{finished}}</h6>
+            <p>{{degree}}</p>
+            <ul>
+            {{#each courses}}
+              <li>{{this}}</li>
+            {{/each}}
+            </ul>
+            <hr>
+          </div>
+        {{/each}}
+        
+      </div>
+
+</template>

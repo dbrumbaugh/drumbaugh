@@ -1,0 +1,36 @@
+<template name="admin">
+
+<div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+	<div class="w3-container w3-center w3-padding-top w3-padding-bottom w3-margin-bottom">
+		{{#if currentUser}}
+			<h4 class="w3-padding-16">
+	        	You are logged in!
+	        </h4>
+
+
+			<input id="currentPassword" class="w3-input" type="password" placeholder="Current password" />
+			<input id="newPassword" class="w3-input" type="password" placeholder="New password" />
+			<input id="newPasswordRepeat" class="w3-input" type="password" placeholder="Repeat new password">
+
+			<div class="w3-margin-top w3-padding-top">
+				<button id="changePassword" class="w3-btn" {{disableChangePass}}>Change Password</button>
+				<button id="logout" class="w3-btn w3-red">Logout</button>
+				<button id="logout" class="w3-btn w3-red">Logout All Devices</button>
+			</div>
+
+		{{else}}
+
+			<h4 class="w3-padding-16">
+	        	Please log in:
+	        </h4>
+
+			<input id="username" class="w3-input" placeholder="Username" />
+			<input id="password" type="password" class="w3-input" placeholder="Password" />
+			<div class="w3-margin-top w3-padding-top">
+				<button id="login" class="w3-btn w3-teal">Login</button>
+			</div>
+		{{/if}}
+	</div>
+</div>
+
+</template>

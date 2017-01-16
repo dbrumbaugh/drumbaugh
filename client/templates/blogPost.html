@@ -1,0 +1,24 @@
+<template name="blogPost">
+
+{{#with post}}
+	<div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+		<div class="w3-container">
+		    <h2 class="w3-text-grey w3-padding-16">
+	        	{{title}}
+	        </h2>
+
+		    <h6 class="w3-text-teal">
+			    <i class="fa fa-calendar fa-fw w3-margin-right"></i>
+			    {{date}}
+		    </h6>
+
+		    <div class="blog-post">
+		    	{{{markdownify body}}}
+		    </div>
+
+		    <hr>
+		</div>
+	</div>
+{{/with}}
+
+</template>

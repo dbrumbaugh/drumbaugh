@@ -1,0 +1,36 @@
+<template name="navigation">
+
+<p class="w3-large">
+	<a href="/" class="navlink">
+	  <b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Home</b>
+	</a>
+</p>
+
+<p class="w3-large">
+	<a href="/portfolio" class="navlink">
+	  <b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Portfolio</b>
+	</a>
+</p>
+
+<p class="w3-large">
+	<a href="/blog" class="navlink">
+	  <b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Blog</b>
+	</a>
+</p>
+
+{{#if currentUser}}
+
+	<p class="w3-large">
+		<a href="/admin" class="navlink">
+		  <b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Admin</b>
+		</a>
+	</p>
+
+	<p class="w3-large">
+		<a href="/blog/create" class="navlink">
+		  <b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>New Post</b>
+		</a>
+	</p>
+{{/if}}
+
+</template>
