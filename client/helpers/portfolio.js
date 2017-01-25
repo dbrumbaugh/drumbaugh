@@ -3,7 +3,7 @@ Template.portfolio.helpers({
 		return [
 			{
 				'position': 'Independent Contractor',
-				'workplace': 'Wildfig Data',
+				'workplace': 'WildFig Data',
 				'location': 'Harrisburg, PA',
 				'started': 'May 2016',
 				'finished': 'Present',
@@ -12,7 +12,7 @@ Template.portfolio.helpers({
 			},
 			{
 				'position': '.NET Developer',
-				'workplace': 'LeHigh University',
+				'workplace': 'Lehigh University',
 				'location': 'Bethlehem, PA',
 				'started': 'July 2016',
 				'finished': 'August 2016',
@@ -71,7 +71,7 @@ Template.portfolio.helpers({
 	education() {
 		return [
 			{
-				'university': 'LeHigh University',
+				'university': 'Lehigh University',
 				'degree': 'Master of Engineering (M.Eng.), Mechanical Engineering and Mechanics',
 				'started': '2016',
 				'finished': '2018',
