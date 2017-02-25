@@ -14,6 +14,7 @@ Template.blogPost.helpers({
 		if (FlowRouter.getRouteName() === 'blogCreate') {
 			return Session.get('preview');
 		} else {
+			Session.set("postid", FlowRouter.getParam('postId'));
 			return Posts.findOne({_id: FlowRouter.getParam('postId')});
 		}
 	}
@@ -31,7 +32,7 @@ Template.blogCreate.helpers({
 			return "disabled";
 		}
 	}
-})
+});
 
 // enables live post preview
 Template.blogCreate.events({
@@ -40,6 +41,13 @@ Template.blogCreate.events({
 		preview.title = event.target.value;
 		Session.set('preview', preview);
 	},
+
+	'keyup input#tags'(event) {
+		var preview = Session.get('preview') || {title: '', date: new Date(), body: ''};
+		preview.tag = event.target.value;
+		Session.set('preview', preview);
+	},
+
 	'keyup textarea#body'(event) {
 		var preview = Session.get('preview') || {title: '', date: new Date(), body: ''};
 		preview.body = event.target.value;
@@ -47,7 +55,8 @@ Template.blogCreate.events({
 	},
 	'click button#submit'(event) {
 		var post = Session.get('preview');
-		Meteor.call('createPost', post.title, post.body, function(err, res){
+		console.log(post.tag);
+		Meteor.call('createPost', post.title, post.body, post.tag, function(err, res){
 			if (!err && res) {
 				alert("Post created!");
 				FlowRouter.go('blogPost', {postId: res});
@@ -61,4 +70,21 @@ Template.blogCreate.events({
 		Session.set('preview', null);
 		FlowRouter.go('home');
 	}
+});
+
+Template.blogPost.events({
+	'click button#delete'(event) {
+		
+		var post_id = Session.get('postid');
+		Meteor.call('deletePost', post_id, function(err, res){
+			if (!err && res) {
+				alert("Post deleted!");
+				FlowRouter.go('home');
+			}
+		});
+	},
+
+	'click button#edit'(event) {
+	}
+
 });

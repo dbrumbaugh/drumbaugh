@@ -78,7 +78,10 @@ Template.portfolio.helpers({
 				'courses': [
 					'Thermodynamics II (ME 304)',
 					'Math Methods I (ME 452)',
-					'Fluid Mechanics (ME 430)'
+					'Fluid Mechanics (ME 430)',
+					'Experimental Techniques in Fluids (ME 450)',
+					'Math Methods II (ME 453)',
+					'Mechatronics (ME 378)'
 				]
 			},
 			{

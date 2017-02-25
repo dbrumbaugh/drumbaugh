@@ -17,6 +17,15 @@
 		    </div>
 
 		    <hr>
+			<div class="w3-text-teal">
+				<h4>Tags: </h4>{{tags}}
+			</div>
+			{{#if currentUser}}
+		    <div class="w3-right w3-margin-bottom w3-margin-top">
+				<button id="edit" class="w3-btn">Edit Post</button>
+				<button id="delete" class="w3-btn w3-red">Delete Post</button>
+			</div>
+			{{/if}}
 		</div>
 	</div>
 {{/with}}
