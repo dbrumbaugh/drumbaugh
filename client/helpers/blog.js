@@ -17,6 +17,29 @@ Template.blogPost.helpers({
 			Session.set("postid", FlowRouter.getParam('postId'));
 			return Posts.findOne({_id: FlowRouter.getParam('postId')});
 		}
+	},
+
+	displayEdit() {
+		var user = Meteor.userId();
+
+		if (FlowRouter.getRouteName() === 'blogCreate'){
+			//We are in the Create Post window, and so we don't need the 
+			//edit/delete buttons to appear on screen.
+			return false;
+		}
+		else
+		{
+			if (Meteor.user())
+			{
+				//We are logged in, and therefore have access to
+				//the buttons. Further, we are not in the create
+				//post window. So display them
+				return true;
+			}
+		}
+
+		//We are not logged in, so do no display edit/delete buttons
+		return false;
 	}
 });
 
